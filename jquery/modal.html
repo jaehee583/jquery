@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>모달창</title>
+    <style>
+        body{
+            background-color: red;
+        }
+        .modal{
+            width: 600px;
+            height: 400px;
+            margin: 100px auto;
+            border: 1px solid black;
+            padding: 20px;
+            border-radius: 20px;
+            background-color: #fff;
+            position: relative;
+        }
+        .btn-close{
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            width: 40px;
+            height: 40px;
+        }
+        .btn-close::before,.btn-close::after{
+            content: '';
+            display: block;
+            height: 4px;
+            background-color: #000;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 50%;
+            transform: rotate(45deg);
+        }
+        .btn-close::after{
+            transform: rotate(-45deg);
+        }
+    </style>
+
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script>
+        // $(function(){
+        //     $('.btn-close').click(function(){
+        //         $('.modal').hide();
+        //     })
+        // })
+    </script>
+</head>
+<body>
+    <div class="wrap">
+        <div class="modal">
+            <div class="btn-close"></div>
+            <h2>모달창</h2>
+            <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eaque doloribus doloremque voluptatum eos, alias sunt quis placeat, earum suscipit corporis, incidunt ipsum? Assumenda, voluptate aliquam. Commodi inventore pariatur quae accusantium!
+                Quam excepturi ratione animi rerum tempore praesentium harum fugit, fugiat hic pariatur expedita totam quia obcaecati. Ullam, distinctio minus voluptatibus esse corporis illum similique ut cupiditate numquam quam a quo!
+                Sapiente perferendis temporibus eos illo et similique doloremque totam maxime ratione esse quia magni fugit id amet iusto mollitia autem voluptates sequi quae, recusandae iste cum, omnis a! Ex, assumenda!
+                Suscipit accusamus iusto adipisci in ex, laboriosam corporis, vitae dicta recusandae facilis temporibus? Eveniet amet, sunt et ab quam ratione sint doloremque expedita, officia eos voluptatem maxime ipsam consequuntur consectetur.
+                Veritatis fugiat in molestiae nisi iure officiis libero sed dicta odio ipsa officia blanditiis debitis, praesentium, ipsum provident quis rem eius voluptate mollitia dignissimos, beatae quae? Beatae quaerat sit laudantium!
+            </p>
+        </div>
+    </div>
+
+    <script>
+        let modalWindow = document.querySelector('.modal');
+        let btnCloseWindow = document.querySelector('.btn-close');
+        console.log(modalWindow);
+        console.log(btnCloseWindow);
+        btnCloseWindow.addEventListener('click',function(){
+            modalWindow.style.display = 'none';
+        })
+    </script>
+</body>
+</html>
